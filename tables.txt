@@ -1,0 +1,7 @@
+CREATE TABLE refresh_tokens (
+	user_id uuid not null, 
+	token VARCHAR(3000) not null, 
+	expires_in int not null,
+	FOREIGN key user_id REFERENCES users(user_id),
+	PRIMARY key (user_id, token)
+)
